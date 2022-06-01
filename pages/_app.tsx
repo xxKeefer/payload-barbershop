@@ -1,10 +1,16 @@
-import React from 'react';
-import type { AppProps } from 'next/app';
+import '@fontsource/poppins'
+import '@fontsource/playfair-display'
 
-import '../css/style.css';
+import { ChakraProvider } from '@chakra-ui/react'
+import type { AppProps } from 'next/app'
+import React from 'react'
+
+import { theme } from '~/styles'
 
 const MyApp = ({ Component, pageProps }: AppProps): React.ReactElement => (
-  <Component {...pageProps} />
-);
+    <ChakraProvider theme={theme}>
+        <Component {...pageProps} />
+    </ChakraProvider>
+)
 
-export default MyApp;
+export default MyApp
